@@ -15,8 +15,11 @@ st.set_page_config(layout='wide')
 # write the title to the web page
 st.header(content['title'])
 
-# write the image to the web page
-st.image(content['url'])
+# write the image or video to the web page
+if content['media_type'] == 'image':
+    st.image(content['url'])
+else:
+    st.video(content['url'])
 
 # write the explanation to the web page
 st.write(content['explanation'])
